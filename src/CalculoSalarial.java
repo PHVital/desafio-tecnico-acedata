@@ -5,6 +5,10 @@ public class CalculoSalarial {
         System.out.println("\n=== CÁLCULO DE SALÁRIO ===");
         System.out.println("Valor do salário por hora: ");
         double salarioPorHora = sc.nextDouble();
+        if (salarioPorHora <= 0) {
+            System.out.println("Valor invalido");
+            return;
+        }
         System.out.println("Quantidade de horas trabalhadas no mês: ");
         double horasTrabalhadas = sc.nextDouble();
         System.out.println("Número de filhos menores de 14 anos: ");
