@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 import java.util.Scanner;
 
 public class SequenciaNumerica {
@@ -27,7 +26,11 @@ public class SequenciaNumerica {
 
         int menor = numeros.stream().min(Integer::compareTo).get();
         int maior = numeros.stream().max(Integer::compareTo).get();
+        int indexMaior = numeros.indexOf(maior);
+        numeros.remove(indexMaior);
+        int segundoMaior = numeros.stream().max(Integer::compareTo).get();
         System.out.println("O valor do menor é: " + menor);
         System.out.println("O valor do maior é: " + maior);
+        System.out.println("O segundo maior valor é: " + segundoMaior);
     }
 }
