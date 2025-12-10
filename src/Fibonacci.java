@@ -24,13 +24,21 @@ public class Fibonacci {
         List<Integer> lista = new ArrayList<>();
         if (quantidade <= 0) return lista;
 
-        int a = 1, b = 0;
+        int a = 1, b = 0, c = 0;
 
         for (int i = 0; i < quantidade; i++) {
             lista.add(a);
             int aux = a;
-            a = a + b;
-            b = aux;
+            int aux2 = b;
+            if (a % 2 != 0) {
+                a = a + b;
+                b = aux;
+                c = aux2;
+            } else {
+                a = a + b + c;
+                b = aux;
+                c = aux2;
+            }
         }
         return lista;
     }
